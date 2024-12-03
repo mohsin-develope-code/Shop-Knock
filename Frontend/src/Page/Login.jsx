@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import axios from "axios";
 import Cookies from "js-cookie";
 import { fetchCartItems, setUserLoggedIn } from "../Redux/cartRedux";
 import { syncLocalCartToDatabase } from "../Utils/syncCartAPI";
@@ -57,6 +56,10 @@ const Login = () => {
       className="bg-gray-100 w-full py-10 px-20 
                       flex items-center justify-between"
     >
+      <div className="h-[500px] w-[600px] mr-32 hover:translate-x-52 hover:ease-in-out hover:duration-500 hover:transition-transform">
+        <img src="src/assets/bg-login.png" />
+      </div>
+
       <form
         onSubmit={handleSubmit}
         className="bg-white w-[550px] px-16 py-14 rounded-lg"
@@ -113,10 +116,6 @@ const Login = () => {
           </Link>
         </p>
       </form>
-
-      <div className="h-[400px] w-[400px] mr-32">
-        <img src="src/assets/login.svg" />
-      </div>
     </div>
   );
 };

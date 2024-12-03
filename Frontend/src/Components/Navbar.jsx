@@ -4,7 +4,6 @@ import Button from "./Button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { RxHamburgerMenu } from "react-icons/rx";
-import axios from "axios";
 import Cookies from "js-cookie";
 import { useDispatch, useSelector } from "react-redux";
 import { emptyCart, setUserLoggedIn } from "../Redux/cartRedux";

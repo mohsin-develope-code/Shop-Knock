@@ -1,9 +1,7 @@
 const express = require("express");
 const { checkAuth } = require("../Middleware/checkAuth");
 const router = express.Router();
-const stripe = require('stripe')('sk_test_51QNgc6BlMYYPhOH4cZCwkF1afA8IdSIrPlVuAkOQWWcTYMYBug8GQiwySoI6S5kPj7tDOnOJld8edzMx9ZsNXS8j00DgojXDur')
-
-
+const stripe = require('stripe')(process.env.Secret_Key)
 
 
 

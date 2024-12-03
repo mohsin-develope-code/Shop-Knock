@@ -13,7 +13,6 @@ const handleGetPaginateProduct = async (req, res) => {
     const cachedProducts = await redisClient.get(cacheKey);
 
     if (cachedProducts) {
-      console.log(`Serving page ${page} from cache`);
       return res.status(200).json(JSON.parse(cachedProducts));
     }
     //
@@ -44,7 +43,6 @@ const handleGetPaginateProduct = async (req, res) => {
     };
 
     await redisClient.setEx(cacheKey, 3600, JSON.stringify(response));
-    console.log(`Set Caching page ${page}`);
 
     res.json({ products, total, totalPages, currentPage: page });
   } catch (error) {
@@ -63,7 +61,6 @@ const handleCategoryProduct = async (req, res) => {
       res.status(202).json({ products: categoryProduct });
     } else {
       // Caching Concept
-      const cacheKey = `products:page:${1}:limit:${5}`;
       const cachedProducts = await redisClient.get(cacheKey);
 
       if (cachedProducts) {
@@ -97,7 +94,6 @@ const handleSingleProduct = async (req, res) => {
   const cacheKey = `singleProduct:${productId}`;
   const cachedProducts = await redisClient.get(cacheKey);
   if (cachedProducts) {
-    console.log(`Get From Cache ${cacheKey}`);
     return res.status(200).json(JSON.parse(cachedProducts));
   }
 
@@ -105,7 +101,7 @@ const handleSingleProduct = async (req, res) => {
 
   await redisClient.setEx(cacheKey, 3600, JSON.stringify(singleProduct));
 
-  console.log("Set From Cache");
+
 
   res.status(200).json(singleProduct);
 };

@@ -27,7 +27,7 @@ const handleAddItemToCart = async (req, res) => {
       const existingItem = findUserCart.products.find(
         (item) => item.productId.toString() === productId
       );
-      console.log(existingItem);
+      
       if (!existingItem) {
         findUserCart.products.push({ productId, quantity, size });
         await findUserCart.save();

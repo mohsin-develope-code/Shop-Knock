@@ -3,7 +3,7 @@ const CartModel = require("../Model/cart");
 
 const handleOrderCreated = async (req, res) => {
   const userId = req.user.id;
-  console.log(userId);
+  
 
   try {
     const userCartData = await CartModel.findOne({ userId });

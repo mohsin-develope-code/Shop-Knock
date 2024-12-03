@@ -11,7 +11,6 @@ const checkAuth = (req, res, next) => {
   }
 
   const checkToken = getUserToken(token);
-  // console.log("Hey bro =====> ",checkToken);
 
   if (!checkToken) {
     return res
@@ -26,7 +25,6 @@ const checkAuth = (req, res, next) => {
 
 const checkAuthorization = (req, res, next) => {
   checkAuth(req, res, () => {
-    console.log(req.user);
     if (req.user.isAdmin) {
       next();
     } else {
