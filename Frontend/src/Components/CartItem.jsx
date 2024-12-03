@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -99,7 +99,7 @@ const CartItem = () => {
 
                   <div className="flex items-center flex-shrink-0 ">
                     <div
-                      onClick={(e) => handleQuantity("decres", item._id)}
+                      onClick={() => handleQuantity("decres", item._id)}
                       className="h-7 w-7 rounded-full text-white flex items-center justify-center text-2xl cursor-pointer bg-black"
                     >
                       {" "}
@@ -111,7 +111,7 @@ const CartItem = () => {
                     </div>
 
                     <div
-                      onClick={(e) => handleQuantity("incres", item._id)}
+                      onClick={() => handleQuantity("incres", item._id)}
                       className="h-7 w-7 rounded-full text-white flex items-center justify-center text-xl cursor-pointer bg-black"
                     >
                       {" "}

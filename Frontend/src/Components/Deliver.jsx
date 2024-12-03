@@ -1,4 +1,3 @@
-import React from "react";
 import { RiSecurePaymentFill } from "react-icons/ri";
 import { FaTruckFast } from "react-icons/fa6";
 import { BsTrophy } from "react-icons/bs";

@@ -1,4 +1,3 @@
-import React from 'react'
 import PopProducts from '../Components/PopProducts'
 import HeroSection from '../Components/HeroSection'
 import Brands from '../Components/Brands'

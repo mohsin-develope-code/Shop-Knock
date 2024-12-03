@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import { publicRequest } from "../reqMethod";
 
@@ -54,8 +53,8 @@ const Order = () => {
                 <div className="flex flex-col gap-7">
                   {/* Ordered Product Detail */}
 
-                  {orderData?.map((item) => (
-                    <div className="flex items-center justify-between px-6">
+                  {orderData?.map((item, i) => (
+                    <div key={i} className="flex items-center justify-between px-6">
                       <div className="flex gap-6 items-center">
                         <div>
                           <img

@@ -1,4 +1,3 @@
-import React from "react";
 import apple from '../assets/logo/apple.png'
 import lenovo from '../assets/logo/lenovo.png'
 import oneplus from '../assets/logo/oneplus.png'
@@ -19,8 +18,8 @@ const Brands = () => {
   return (
     <div className="h-20 w-full px-16 my-6 ">
       <div className="bg-gray-100 h-full w-full rounded-xl shadow-md flex items-center justify-center space-x-24">
-        {brandLogo.map((image) => (
-          <img src={image} className="h-6" />
+        {brandLogo.map((image, i) => (
+          <img key={i} src={image} className="h-6" />
         ))}
       </div>
     </div>

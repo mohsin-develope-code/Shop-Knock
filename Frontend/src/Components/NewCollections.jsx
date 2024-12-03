@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import { publicRequest } from "../reqMethod";
 
@@ -26,8 +26,8 @@ const NewCollections = () => {
           </div>
 
           <div className="w-full h-full mt-10 flex flex-wrap justify-center gap-x-14 gap-y-8 ">
-            {newItem?.map((item) => (
-              <div className="border-2 rounded-xl shadow-md">
+            {newItem?.map((item, i) => (
+              <div key={i} className="border-2 rounded-xl shadow-md">
                 <ProductCard item={item} />
               </div>
             ))}

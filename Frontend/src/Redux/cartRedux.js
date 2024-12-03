@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { addToCartBackend, removeFromCartBackend } from "./cartAPI";
-import axios from "axios";
 import Cookies from "js-cookie";
 import {
   getCartFromLocalStorage,
@@ -174,7 +173,7 @@ const cartSlice = createSlice({
       })
 
       //Fetch Cart Item
-      .addCase(fetchCartItems.pending, (state, action) => {
+      .addCase(fetchCartItems.pending, (state) => {
         state.loading = true;
       })
 

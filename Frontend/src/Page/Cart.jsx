@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../Components/Button";
 import CartItem from "../Components/CartItem";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCartItems } from "../Redux/cartRedux";
 import { loadStripe } from "@stripe/stripe-js";
-import axios from "axios";
 import Cookies from "js-cookie";
 import MessagePop from "../Components/MessagePop";
 import redCross from "../../src/assets/cross.avif";

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import banner1 from  "../assets/banner-3.jpg"
-import banner2 from  "../assets/Banner-0.jpg"
+import banner2 from  "../assets/banner-0.jpg"
 import banner3 from  "../assets/banner-4.jpg"
 import banner4 from  "../assets/banner-5.jpg"
 
@@ -28,8 +28,8 @@ const PopProducts = () => {
             className="flex transition-transform duration-500"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
-            {slides.map((slide, index) => (
-              <img
+            {slides.map((slide, i) => (
+              <img key={i}
                 src={slide}
                 className="min-w-full h-64 flex-shrink-0 object-cover"
               />

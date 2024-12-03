@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -123,15 +123,15 @@ const SingleProduct = () => {
           <p>
             {" "}
             <span className="font-medium">Category : </span>
-            {itemProducts?.categories.map((cat) => (
-              <span className="text-sm text-gray-700 px-1">{cat}</span>
+            {itemProducts?.categories.map((cat, i) => (
+              <span key={i} className="text-sm text-gray-700 px-1">{cat}</span>
             ))}
           </p>
 
           <div className="flex items-center flex-shrink-0 ">
             <div
               className="h-8 w-8 p-1 rounded-full text-white flex items-center justify-center text-2xl cursor-pointer bg-black"
-              onClick={(e) => handleQuantity("decres")}
+              onClick={() => handleQuantity("decres")}
             >
               -
             </div>
@@ -140,7 +140,7 @@ const SingleProduct = () => {
             </div>
             <div
               className="h-8 w-8 p-1 rounded-full text-white flex items-center justify-center text-2xl cursor-pointer bg-black"
-              onClick={(e) => handleQuantity("incres")}
+              onClick={() => handleQuantity("incres")}
             >
               +
             </div>
@@ -149,7 +149,7 @@ const SingleProduct = () => {
           <div className="flex items-center gap-3 mt-2">
             <div className="text-xl">Size : </div>
             {sizeItem.map((item, index) => (
-              <div
+              <div key={index}
                 className={`border-[1px] border-black rounded-full h-8 w-8 flex justify-center items-center font-medium cursor-pointer ${
                   active === index ? "bg-gray-400" : "bg-transparent"
                 }`}

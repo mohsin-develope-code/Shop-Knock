@@ -1,4 +1,3 @@
-import React from "react";
 import { footerData } from "../Data/data";
 import subscribeImg from "../assets/woman2.png";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { HiMiniArrowUpRight } from "react-icons/hi2";
 import menHero from '../assets/men-hero.png';
 import woman2 from "../assets/woman2.png"
@@ -47,7 +46,7 @@ const HeroSection = () => {
 
               <div className="flex flex-col items-center">
                 <h1 className="text-2xl font-bold">Women's Fashion </h1>
-                <p className="text-lg font-medium">Shop your perfect look</p>
+                <p className="text-lg font-medium"> Shop your perfect look</p>
 
                 <Link to={'/products/all'}>
                 <button className="px-4 py-2 flex items-center mt-5 space-x-1 rounded-xl text-white font-medium text-base bg-black ">

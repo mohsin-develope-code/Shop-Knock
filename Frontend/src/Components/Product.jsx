@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import ProductLoader from "../Loading/ProductLoader";
 import { publicRequest } from "../reqMethod";
@@ -62,7 +61,7 @@ const Product = ({ filters, sortOrder, loading }) => {
         {loading ? (
           <ProductLoader />
         ) : (
-          products?.map((item) => <ProductCard item={item} />)
+          products?.map((item, i) => <ProductCard key={i} item={item} />)
         )}
       </div>
 
@@ -76,7 +75,7 @@ const Product = ({ filters, sortOrder, loading }) => {
             Prev{" "}
           </button>
           {Array.from({ length: totalPage }, (_, i) => (
-            <button className="w-10 py-2 rounded-md bg-white text-black">
+            <button key={i} className="w-10 py-2 rounded-md bg-white text-black">
               {i + 1}
             </button>
           ))}

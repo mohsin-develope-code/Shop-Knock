@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import MessagePop from "./MessagePop";
 import { HiOutlineShoppingBag } from "react-icons/hi2";

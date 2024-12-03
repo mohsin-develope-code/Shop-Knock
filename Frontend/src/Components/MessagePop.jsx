@@ -1,4 +1,3 @@
-import React from "react";
 
 const MessagePop = ({ msgValue, popImg, clrShadow }) => {
   return (
