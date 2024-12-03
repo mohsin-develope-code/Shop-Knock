@@ -1,13 +1,19 @@
 import React from "react";
+import apple from '../assets/logo/apple.png'
+import lenovo from '../assets/logo/lenovo.png'
+import oneplus from '../assets/logo/oneplus.png'
+import huawei from '../assets/logo/huawei.png'
+import tencent from '../assets/logo/tencent.png'
 
 const Brands = () => {
+
   const brandLogo = [
-    "src/assets/logo/apple.png",
-    "src/assets/logo/lenovo.png",
-    "src/assets/logo/oneplus.png",
-    "src/assets/logo/huawei.png",
-    "src/assets/logo/tencent.png",
-    "src/assets/logo/lenovo.png",
+   apple, 
+   lenovo,
+   oneplus,
+   huawei,
+   tencent,
+   lenovo
   ];
 
   return (

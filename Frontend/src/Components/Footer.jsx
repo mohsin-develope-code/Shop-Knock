@@ -42,7 +42,7 @@ const Footer = () => {
                 placeholder="Email Address"
                 className="w-80 h-12 px-2"
               />
-              <button className="px-4 h-12 bg-main-yellow">Subscribe</button>
+              <button className="px-4 h-12 bg-black text-white">Subscribe</button>
             </motion.div>
           </div>
         </div>

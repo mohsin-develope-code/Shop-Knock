@@ -66,6 +66,7 @@ const Navbar = () => {
     return () => clearTimeout(timer);
   }, [isDeleting, placeholderIndex, placeholders]);
 
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { cartItems, userLoggedIn } = useSelector((state) => state.cart);
@@ -116,7 +117,9 @@ const Navbar = () => {
       <div className="h-14 bg-white flex px-16 py-8 border-b-2 ">
         <div className="w-full flex items-center justify-between">
           <div className=" flex items-center gap-28">
-            <div className="text-black font-extrabold text-2xl">SHOP KNOCK</div>
+            <div className="text-black font-extrabold text-2xl"> 
+              <span className="pl-3 pr-1 py-1 bg-red-500 font-semibold text-white">SHOP</span>
+              <span className="pl-1">KNOCK</span></div>
 
             <div>
               <ul className="flex gap-5">

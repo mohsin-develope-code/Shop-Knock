@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import Product from "./Product";
+import banner1 from  "../assets/banner-3.jpg"
+import banner2 from  "../assets/Banner-0.jpg"
+import banner3 from  "../assets/banner-4.jpg"
+import banner4 from  "../assets/banner-5.jpg"
 
 const PopProducts = () => {
   const slides = [
-    "src/assets/banner-3.jpg",
-    "src/assets/Banner-0.jpg",
-    "src/assets/banner-4.jpg",
-    "src/assets/banner-5.jpg",
+    banner1, banner2, banner3, banner4
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -1,5 +1,11 @@
 import React from "react";
 import { HiMiniArrowUpRight } from "react-icons/hi2";
+import menHero from '../assets/men-hero.png';
+import woman2 from "../assets/woman2.png"
+import bag from "../assets/bag-offer.png"
+import women4 from "../assets/hero-right.avif"
+import { Link } from "react-router-dom";
+
 
 const HeroSection = () => {
   return (
@@ -15,14 +21,16 @@ const HeroSection = () => {
               <p>
                 <span className="text-xl">50%</span> Off every two mens wear
               </p>
+              <Link to={'/products/all'}>
               <button className="px-5 py-2 mt-3 rounded-xl text-black font-semibold text-lg bg-white border-2 border-black">
                 Buy Now
               </button>
+              </Link>
             </div>
 
             <div className="w-1/3 h-full">
               <img
-                src="src/assets/men-hero.png"
+                src={menHero}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -32,7 +40,7 @@ const HeroSection = () => {
             <div className="h-full w-[70%] flex items-center rounded-3xl bg-gray-400">
               <div className="h-full w-[300px]">
                 <img
-                  src="src/assets/woman2.png"
+                  src={woman2}
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -40,11 +48,15 @@ const HeroSection = () => {
               <div className="flex flex-col items-center">
                 <h1 className="text-2xl font-bold">Women's Fashion </h1>
                 <p className="text-lg font-medium">Shop your perfect look</p>
+
+                <Link to={'/products/all'}>
                 <button className="px-4 py-2 flex items-center mt-5 space-x-1 rounded-xl text-white font-medium text-base bg-black ">
                   {" "}
                   <span>Shop Now</span>{" "}
                   <HiMiniArrowUpRight className="font-semibold text-xl" />{" "}
                 </button>
+                </Link>
+
               </div>
             </div>
 
@@ -57,14 +69,20 @@ const HeroSection = () => {
                   <p className="text-xl text-white text-center font-semibold">
                     60% Offers
                   </p>
+
+      
                   <button className="px-5 absolute top-24 mt-5 z-30  py-3 flex items-center space-x-3 rounded-xl text-white font-medium text-base bg-black ">
                     {" "}
+                  
                     <span>14 : 12 : 29</span>{" "}
                     <HiMiniArrowUpRight className="font-semibold text-xl" />{" "}
+            
                   </button>
+                
+
                 </div>
                 <img
-                  src="src/assets/bag-offer.png"
+                  src={bag}
                   className="h-full w-full opacity-35 z-10 object-contain rounded-3xl"
                 />
               </div>
@@ -74,7 +92,7 @@ const HeroSection = () => {
 
         <div className="w-1/3 h-full flex justify-center relative rounded-3xl ">
           <img
-            src="src/assets/hero-right.avif"
+            src={women4}
             className="h-full w-full opacity-80 rounded-3xl object-cover"
           />
 
