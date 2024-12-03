@@ -1,5 +1,5 @@
 const UserModel = require("../Model/user");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const { setUserToken } = require("../Utils/jwt");
 
 async function handleUserSignup(req, res) {
