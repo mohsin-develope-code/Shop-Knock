@@ -11,7 +11,7 @@ import {
 import MessagePop from "./MessagePop";
 import greenTick from "../../src/assets/success_green_tick.png";
 import { Link } from "react-router-dom";
-import CartItemLoader from "../Loading/cartItemLoader";
+import CartItemLoader from "../Loading/CartItemLoader";
 
 const CartItem = () => {
   const dispatch = useDispatch();
