@@ -8,6 +8,8 @@ import Cookies from "js-cookie";
 import MessagePop from "../Components/MessagePop";
 import redCross from "../../src/assets/cross.avif";
 import { publicRequest } from "../reqMethod";
+import { Link } from "react-router-dom";
+import noCartItem from "../assets/shopping.png"
 
 
 const Cart = () => {
@@ -71,15 +73,12 @@ const Cart = () => {
         {cartItems.length > 0 ? (
           <>
             <div className="flex justify-between items-center">
+              <Link to={'/products/all'}>
               <div>
-                {" "}
-                <Button btnValue={"Continue Shopping"} />{" "}
+                <Button btnValue={"Continue Shopping"} />
               </div>
-              <div>Your Wishlist</div>
-              <div>
-                {" "}
-                <Button btnValue={"Checkout Now"} />{" "}
-              </div>
+              </Link>
+              
             </div>
 
             <div className="flex justify-between my-10">
@@ -124,7 +123,7 @@ const Cart = () => {
 
             <img
               className="h-[400px] w-[400px]"
-              src="src/assets/shopping.png"
+              src={noCartItem}
               alt="No Cart Items"
             />
           </div>

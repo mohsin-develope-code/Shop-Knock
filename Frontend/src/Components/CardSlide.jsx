@@ -1,4 +1,13 @@
 import { useRef } from "react";
+import kurti from "../assets/sales/kurti.jpg"
+import cargo from "../assets/sales/cargo.jpg"
+import jeans from "../assets/sales/women-jeans.webp"
+import plazo from "../assets/sales/plazo.webp"
+import jacket from "../assets/sales/jacket.webp"
+import tshirt from "../assets/sales/tshirt.webp"
+import hoody from "../assets/sales/hoody.jpg"
+
+
 
 const CardSlide = () => {
   const sliderRef = useRef(null);
@@ -16,21 +25,13 @@ const CardSlide = () => {
   };
 
   const cards = [
-    { id: 1, img: "src/assets/sales/kurti.jpg", title: "New Kurti " },
-    { id: 2, img: "src/assets/sales/cargo.jpg", title: "New Men Cargo" },
-    {
-      id: 3,
-      img: "src/assets/sales/women-jeans.webp",
-      title: "New Women Jeans",
-    },
-    { id: 4, img: "src/assets/sales/plazo.webp", title: "New Plazo" },
-    {
-      id: 5,
-      img: "src/assets/sales/jacket.webp",
-      title: "New Leather Jacket ",
-    },
-    { id: 6, img: "src/assets/sales/tshirt.webp", title: "New Tshirt " },
-    { id: 7, img: "src/assets/sales/hoody.jpg", title: "New Women Hoody " },
+    { id: 1, img: kurti, title: "New Kurti " },
+    { id: 2, img: cargo, title: "New Men Cargo" },
+    { id: 3, img: jeans, title: "New Women Jeans"},
+    { id: 4, img: plazo, title: "New Plazo" },
+    { id: 5, img: jacket, title: "New Leather Jacket "},
+    { id: 6, img: tshirt, title: "New Tshirt " },
+    { id: 7, img: hoody, title: "New Women Hoody " },
   ];
 
   return (

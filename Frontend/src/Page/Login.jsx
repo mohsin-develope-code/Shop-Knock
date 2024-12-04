@@ -5,6 +5,7 @@ import Cookies from "js-cookie";
 import { fetchCartItems, setUserLoggedIn } from "../Redux/cartRedux";
 import { syncLocalCartToDatabase } from "../Utils/syncCartAPI";
 import { publicRequest } from "../reqMethod";
+import sideLoginImg from "../assets/bg-login.png"
 
 
 const Login = () => {
@@ -57,7 +58,7 @@ const Login = () => {
                       flex items-center justify-between"
     >
       <div className="h-[500px] w-[600px] mr-32 hover:translate-x-52 hover:ease-in-out hover:duration-500 hover:transition-transform">
-        <img src="src/assets/bg-login.png" />
+        <img src={sideLoginImg} />
       </div>
 
       <form
