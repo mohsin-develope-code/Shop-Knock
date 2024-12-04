@@ -9,7 +9,6 @@ import Signup from "../Page/Signup";
 import Cart from "../Page/Cart";
 import SuccessOrder from "../Page/SuccessOrder";
 import FailOrder from "../Page/FailOrder";
-import Order from "../Page/Order";
 
 const Router = () => {
   return (
@@ -33,6 +32,10 @@ const Router = () => {
           <Route path="/fail" element={<FailOrder />} />
 
           <Route path="/order" element={<Order />} />
+
+
+
+
         </Route>
       </Routes>
     </div>

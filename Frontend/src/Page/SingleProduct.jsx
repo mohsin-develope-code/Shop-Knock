@@ -10,6 +10,7 @@ import MessagePop from "../Components/MessagePop";
 import greenTick from "../../src/assets/success_green_tick.png";
 import ProductCard from "../Components/ProductCard";
 import { publicRequest } from "../reqMethod";
+import SinglePageLoader from "../Loading/SinglePageLoader";
 
 const sizeItem = ["S", "M", "L", "XL"];
 
@@ -24,14 +25,17 @@ const SingleProduct = () => {
   const [active, setActive] = useState(0);
   const [itemProducts, setItemProducts] = useState();
   const [relatedProducts, setRelatedProducts] = useState();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true)
     const getProduct = async () => {
       const response = await publicRequest.get(`product/find/${id}`);
       setItemProducts(response.data);
     };
     getProduct();
     window.scrollTo(0, 0);
+    setLoading(false)
   }, [id]);
 
   useEffect(() => {
@@ -98,7 +102,12 @@ const SingleProduct = () => {
   };
 
   return (
-    <div key={id} className="px-24 py-16 bg-white">
+    <>
+    {
+      loading?
+      <SinglePageLoader/>
+      :
+      <div key={id} className="px-24 py-16 bg-white">
       <div className=" flex gap-16">
         <div className="h-[500px] w-[500px] flex-shrink-0 border-2 border-gray-300 p-3  bg-white">
           <img
@@ -236,7 +245,10 @@ const SingleProduct = () => {
       ) : (
         <></>
       )}
-    </div>
+      </div>
+
+    }
+    </>
   );
 };
 
