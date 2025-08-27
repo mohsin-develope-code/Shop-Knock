@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { handleGetPaginateProduct, handleCategoryProduct, handleNewCollectionProduct, handleSingleProduct } = require("../Controller/productController");
+const {handleSearchProduct, handleGetPaginateProduct, handleCategoryProduct, handleNewCollectionProduct, handleSingleProduct } = require("../Controller/productController");
 
 
 
@@ -13,6 +13,11 @@ router.get("/", handleGetPaginateProduct)
 // Get All Products and Category Products
 
 router.get("/category", handleCategoryProduct);
+
+
+// Get Search Products only
+
+router.get("/search", handleSearchProduct);
 
 
 

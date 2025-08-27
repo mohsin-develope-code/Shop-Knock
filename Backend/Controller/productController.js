@@ -1,21 +1,14 @@
 const ProductModel = require("../Model/product");
-const redisClient = require("../Utils/redisClient");
+// const redisClient = require("../Utils/redisClient");
 
 
 const handleGetPaginateProduct = async (req, res) => {
+
   try {
     const page = req.query.page || 1;
-    const limit = 5;
+    const limit = 6;
     const skip = (page - 1) * limit;
 
-    // Caching Concept
-    const cacheKey = `products:page:${page}:limit:${limit}`;
-    const cachedProducts = await redisClient.get(cacheKey);
-
-    if (cachedProducts) {
-      return res.status(200).json(JSON.parse(cachedProducts));
-    }
-    //
 
     const [result] = await ProductModel.aggregate([
       {
@@ -35,6 +28,7 @@ const handleGetPaginateProduct = async (req, res) => {
     const total = result.total[0]?.count || 0;
     const totalPages = Math.ceil(total / limit);
 
+
     const response = {
       products,
       total,
@@ -42,13 +36,33 @@ const handleGetPaginateProduct = async (req, res) => {
       currentPage: page,
     };
 
-    await redisClient.setEx(cacheKey, 3600, JSON.stringify(response));
-
-    res.json({ products, total, totalPages, currentPage: page });
+    res.status(200).json({ products, total, totalPages, currentPage: page });
   } catch (error) {
     res.status(500).json({ message: "Internal Error...." });
   }
 };
+
+
+
+
+
+const handleSearchProduct = async (req, res) => {
+
+  const query = req.query.q ;
+
+  console.log(query);
+
+  const searchProducts = await ProductModel.find({
+    title: { $regex: query, $options: 'i' } // case-insensitive search
+    });
+
+    res.status(202).json({ products: searchProducts });
+
+}
+
+
+
+
 
 const handleCategoryProduct = async (req, res) => {
   const query = req.query.categories;
@@ -59,19 +73,23 @@ const handleCategoryProduct = async (req, res) => {
         categories: { $in: [query] },
       });
       res.status(202).json({ products: categoryProduct });
-    } else {
-      // Caching Concept
+    } 
+    else {
+     /* // Caching Concept
       const cachedProducts = await redisClient.get(cacheKey);
 
       if (cachedProducts) {
         return res.status(200).json(JSON.parse(cachedProducts));
       }
-      //
+      // */
     }
   } catch (error) {
     res.status(500).json({ message: "Internal Server Error", Error: error });
   }
 };
+
+
+
 
 const handleNewCollectionProduct = async (req, res) => {
   try {
@@ -88,18 +106,20 @@ const handleNewCollectionProduct = async (req, res) => {
   }
 };
 
+
+
 const handleSingleProduct = async (req, res) => {
   const productId = req.params.id;
 
-  const cacheKey = `singleProduct:${productId}`;
-  const cachedProducts = await redisClient.get(cacheKey);
-  if (cachedProducts) {
-    return res.status(200).json(JSON.parse(cachedProducts));
-  }
+ // const cacheKey = `singleProduct:${productId}`;
+ // const cachedProducts = await redisClient.get(cacheKey);
+ // if (cachedProducts) {
+ //   return res.status(200).json(JSON.parse(cachedProducts));
+  // }
 
   const singleProduct = await ProductModel.findOne({ _id: req.params.id });
 
-  await redisClient.setEx(cacheKey, 3600, JSON.stringify(singleProduct));
+  // await redisClient.setEx(cacheKey, 3600, JSON.stringify(singleProduct));
 
 
 
@@ -112,4 +132,5 @@ module.exports = {
   handleCategoryProduct,
   handleNewCollectionProduct,
   handleSingleProduct,
+  handleSearchProduct,
 };
