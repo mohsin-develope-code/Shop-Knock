@@ -18,17 +18,20 @@ const Products = () => {
     setFilter(filterValue);
   };
 
+  
   useEffect(() => {
     setLoading(true);
 
     setTimeout(() => {
       setLoading(false);
     }, 3000);
-  }, []);
+  }, []); 
+
 
   return (
-    <div className="w-full flex gap-5  bg-gray-100">
-      <div className="h-[550px] w-64 flex-shrink-0 bg-white ml-16 my-7 px-5 flex flex-col gap-3">
+    <div className="w-full flex gap-5 bg-gray-100">
+
+      <div className="h-[550px] w-64 flex-shrink-0 bg-white ml-16 my-7 px-5 hidden md:flex flex-col gap-3">
         <div>
           <h1 className="text-lg text-center font-medium my-4 px-3 py-1 text-white bg-red-600 w-full">
             Filter Products
@@ -86,6 +89,7 @@ const Products = () => {
           />
         </div>
       </div>
+
 
       <div className="w-full">
         <Product filters={filters} sortOrder={sortOrder} loading={loading} />

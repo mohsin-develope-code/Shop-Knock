@@ -41,12 +41,12 @@ const ProductCard = ({ item }) => {
     <div>
       <div
         key={item._id}
-        className="relative h-[400px] w-[300px] overflow-hidden pb-4 flex flex-col justify-between gap-3 
+        className="relative  h-[350px] w-[250px] lg:h-[400px] lg:w-[300px] overflow-hidden pb-4 flex flex-col justify-between gap-3 
                rounded-lg bg-white"
       >
         <div className="w-full flex justify-center">
           <Link to={`/product/${item._id}`}>
-            <div className="w-[250px] h-[200px] text-center flex justify-center items-center mt-5">
+            <div className="w-[200px] h-[170px] lg:w-[250px] lg:h-[200px] text-center flex justify-center items-center mt-5">
               <img className="h-full w-full object-contain" src={item.img} />
             </div>
           </Link>
@@ -54,15 +54,15 @@ const ProductCard = ({ item }) => {
 
         <div className="flex flex-col gap-3 mx-7">
           <Link to={`/product/${item._id}`}>
-            <p className="font-semibold line-clamp-1">{item.title}</p>
+            <p className="text-base lg:text-lg font-semibold line-clamp-1">{item.title}</p>
           </Link>
-          <p className="text-red-500 text-xl font-medium">
+          <p className="text-red-500 text-lg lg:text-xl font-medium">
             Price ${item.price}
           </p>
 
           <button
             onClick={() => handleAddCartItem(item)}
-            className="px-5 py-3 font-semibold bg-skin
+            className="px-4 py-2 lg:px-5 lg:py-3 font-semibold bg-skin
         rounded-lg flex items-start justify-center gap-4
         transition ease-in-out hover:scale-105"
           >

@@ -57,7 +57,7 @@ const Login = () => {
       className="bg-gray-100 w-full py-10 px-20 
                       flex items-center justify-between"
     >
-      <div className="h-[500px] w-[600px] mr-32 hover:translate-x-52 hover:ease-in-out hover:duration-500 hover:transition-transform">
+      <div className="h-[500px] w-[600px] mr-32 hidden lg:flex">
         <img src={sideLoginImg} />
       </div>
 
@@ -110,7 +110,7 @@ const Login = () => {
         </button>
 
         <p className="text-sm text-center ">
-          Dont’t have an aceount ?
+          Dont’t have an account ?
           <Link to={"/signup"} className="text-blue-500">
             {" "}
             Sign up free{" "}

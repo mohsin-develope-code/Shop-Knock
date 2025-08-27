@@ -35,7 +35,7 @@ const CardSlide = () => {
   ];
 
   return (
-    <div className="w-[1100px] mx-auto my-4">
+    <div className="w-full lg:w-[1100px]  mx-auto my-4">
       <div className="text-center text-4xl font-semibold mb-10">
         Fashion <span className="bg-red-600 text-white pl-2 pr-5">Sale</span>
       </div>

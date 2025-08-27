@@ -5,7 +5,7 @@ const Button = ( {btnValue} ) => {
 
     <div>
         <button className='px-6 py-2 rounded-lg text-white bg-black border-transparent border-2
-                          text-lg hover:bg-blue-50 hover:border-2 hover:border-black
+                          sm:text-sm md:text-base lg:text-lg hover:bg-blue-50 hover:border-2 hover:border-black
                            hover:text-black font-semibold transition duration-700 ease-in-out'>
             {btnValue}
         </button>

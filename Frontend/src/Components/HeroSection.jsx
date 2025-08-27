@@ -10,15 +10,18 @@ const HeroSection = () => {
   return (
     <div className="max-w-full px-16 py-5">
       <div className="h-screen w-full flex space-x-4">
-        <div className="w-2/3 h-full flex flex-col space-y-4 pb-6">
-          <div className="h-1/2 w-full pl-24 overflow-hidden bg-green-800 rounded-3xl flex justify-between items-center">
-            <div className="text-white flex flex-col items-start">
+
+        <div className="lg:w-2/3 lg:h-full flex flex-col space-y-4 pb-6">
+
+
+          <div className="h-1/2 w-full pl-6 md:pl-24 overflow-hidden bg-green-800 rounded-3xl flex justify-between items-center">
+            <div className="text-white w-full flex flex-col items-start">
               <span className="text-xs text-yellow-200">
                 Brands Also Available
               </span>
-              <h1 className="text-3xl font-semibold ">Men Clothes Sale</h1>
+              <h1 className="text-xl md:text-3xl font-semibold ">Men Clothes Sale</h1>
               <p>
-                <span className="text-xl">50%</span> Off every two mens wear
+                <span className="text-sm md:text-xl">50% Off every two mens wear</span>
               </p>
               <Link to={'/products/all'}>
               <button className="px-5 py-2 mt-3 rounded-xl text-black font-semibold text-lg bg-white border-2 border-black">
@@ -27,7 +30,7 @@ const HeroSection = () => {
               </Link>
             </div>
 
-            <div className="w-1/3 h-full">
+            <div className="w-full md:w-1/3 h-full">
               <img
                 src={menHero}
                 className="w-full h-full object-cover"
@@ -36,17 +39,17 @@ const HeroSection = () => {
           </div>
 
           <div className="w-full h-1/2 flex gap-4 items-center justify-between ">
-            <div className="h-full w-[70%] flex items-center rounded-3xl bg-gray-400">
-              <div className="h-full w-[300px]">
+            <div className="h-full w-full md:w-[70%] flex items-center rounded-3xl bg-gray-400">
+              <div className="h-full  w-[200px] lg:w-[300px]">
                 <img
                   src={woman2}
                   className="h-full w-full object-cover"
                 />
               </div>
 
-              <div className="flex flex-col items-center">
-                <h1 className="text-2xl font-bold">Women's Fashion </h1>
-                <p className="text-lg font-medium"> Shop your perfect look</p>
+              <div className=" w-full flex flex-col items-center justify-center">
+                <h1 className="text-lg md:text-xl xl:text-2xl font-bold">Women's Fashion </h1>
+                <p className="text-base md:text-base xl:text-lg font-medium"> Shop your perfect look</p>
 
                 <Link to={'/products/all'}>
                 <button className="px-4 py-2 flex items-center mt-5 space-x-1 rounded-xl text-white font-medium text-base bg-black ">
@@ -59,7 +62,7 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <div className="h-full w-[30%] rounded-3xl bg-red-500">
+            <div className="h-full w-[30%]  hidden md:flex rounded-3xl bg-red-500">
               <div className="relative">
                 <div className="z-20 flex flex-col items-center">
                   <p className="text-xl text-white text-center pt-5 font-semibold">
@@ -87,19 +90,22 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
+
         </div>
 
-        <div className="w-1/3 h-full flex justify-center relative rounded-3xl ">
+        <div className="w-1/3 h-full hidden lg:flex justify-center relative rounded-3xl ">
           <img
             src={women4}
             className="h-full w-full opacity-80 rounded-3xl object-cover"
           />
 
           <div className="absolute z-10 bottom-20 flex flex-col items-center space-y-14">
-            <h1 className="text-5xl font-semibold text-white">Winter Season</h1>
-            <h2 className="text-7xl font-semibold text-white ">50% Off</h2>
+            <h1 className="text-4xl xl:text-5xl font-semibold text-white">Winter Season</h1>
+            <h2 className="text-5xl xl:text-7xl font-semibold text-white ">50% Off</h2>
           </div>
         </div>
+
+
       </div>
     </div>
   );

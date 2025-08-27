@@ -68,11 +68,11 @@ const CartItem = () => {
         <CartItemLoader />
       ) : (
         cartItems.map((item) => (
-          <div key={item._id} className="border-b-2 pb-4">
-            <div className="w-full h-48 mt-10 flex justify-between ">
-              <div className="flex gap-12">
+          <div key={item._id} className="border-b-2  md:pb-4">
+            <div className="w-full h-48 mt-10 flex md:justify-between ">
+              <div className="flex gap-4 md:gap-12">
                 <Link to={`/product/${item._id}`}>
-                  <div className="w-52 h-48 bg-slate-300 rounded-2xl border-[1px]">
+                  <div className="w-36 h-36 md:w-52 md:h-48 bg-slate-300 rounded-2xl border-[1px]">
                     <img
                       src={item.img}
                       className="w-full h-full object-scale-down rounded-2xl border-[1px] bg-white p-3"
@@ -80,24 +80,24 @@ const CartItem = () => {
                   </div>
                 </Link>
 
-                <div className="flex flex-col justify-between py-2">
+                <div className="flex flex-col md:justify-between">
                   <Link to={`/product/${item._id}`}>
                     {" "}
-                    <p className="text-xl font-medium line-clamp-2 leading-tight">
+                    <p className="text-base md:text-xl py-1 font-medium line-clamp-2 leading-tight">
                       {item.title}
                     </p>
                   </Link>
-                  <p>
+                  <p className="py-1">
                     {" "}
-                    <span className="text-gray-500">Size</span> : {item.size}
+                    <span className="text-gray-500 text-sm  md:text-base">Size</span> : {item.size}
                   </p>
-                  <p>
+                  <p className="py-1">
                     {" "}
-                    <span className="text-gray-500">Quantity</span> :{" "}
+                    <span className="text-gray-500 text-sm  md:text-base">Quantity</span> :{" "}
                     {item.quantity}
                   </p>
 
-                  <div className="flex items-center flex-shrink-0 ">
+                  <div className="flex items-center flex-shrink-0 py-1 ">
                     <div
                       onClick={() => handleQuantity("decres", item._id)}
                       className="h-7 w-7 rounded-full text-white flex items-center justify-center text-2xl cursor-pointer bg-black"
@@ -126,9 +126,9 @@ const CartItem = () => {
               <div className="w-48 flex flex-col items-end justify-between py-4">
                 <div
                   onClick={() => handleRemoveCart(item)}
-                  className="h-10 w-10 bg-slate-100 rounded-lg cursor-pointer flex justify-center items-center transition-all hover:scale-105 ease-in-out"
+                  className="h-7 w-7 md:h-10 md:w-10 bg-slate-100 rounded-lg cursor-pointer flex justify-center items-center transition-all hover:scale-105 ease-in-out"
                 >
-                  <RiDeleteBin6Line className="h-5 w-5" />
+                  <RiDeleteBin6Line className="md:h-5 md:w-5 h-3 w-3" />
                 </div>
 
                 {showPop && (
@@ -139,7 +139,7 @@ const CartItem = () => {
                   />
                 )}
 
-                <div className="text-5xl">${item.price * item.quantity}</div>
+                <div className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl">${item.price * item.quantity}</div>
               </div>
             </div>
           </div>

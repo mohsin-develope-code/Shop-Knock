@@ -2,6 +2,7 @@ import axios from "axios";
 import { getCartFromLocalStorage } from "./LocalStorageCart";
 import { syncCart } from "../Redux/cartRedux";
 import Cookies from "js-cookie";
+import { publicRequest } from "../reqMethod";
 
 // API call when user login and user already take cart items in localStorage
 export const syncLocalCartToDatabase = async (dispatch) => {
@@ -13,8 +14,7 @@ export const syncLocalCartToDatabase = async (dispatch) => {
   }));
 
   if (formateLocalCart.length > 0) {
-    const response = await axios.post(
-      "http://localhost:8000/api/cart/create-cart",
+    const response = await publicRequest.post('cart/create-cart',
       { cartItems: formateLocalCart },
       {
         headers: {

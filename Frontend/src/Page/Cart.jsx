@@ -11,7 +11,6 @@ import { publicRequest } from "../reqMethod";
 import { Link } from "react-router-dom";
 import noCartItem from "../assets/shopping.png"
 
-
 const Cart = () => {
   const dispatch = useDispatch();
   const { cartItems, total, userLoggedIn } = useSelector((state) => state.cart);
@@ -81,13 +80,14 @@ const Cart = () => {
               
             </div>
 
-            <div className="flex justify-between my-10">
-              <div className="flex flex-col w-2/3">
+            <div className="flex flex-col lg:flex-row justify-between my-10">
+              <div className="flex flex-col w-full lg:w-[60%]">
                 <CartItem />
               </div>
 
-              <div className="border-2 border-gray-200 w-[320px] h-[350px] text-center px-7 py-6 rounded-xl flex flex-col gap-8">
-                <h1 className="text-3xl font-semibold">Order Summary</h1>
+              <div className="border-2 border-gray-200 w-full h-full lg:w-[320px] lg:h-[350px] 
+                              text-center px-7 py-6 my-8 rounded-xl flex flex-col gap-8">
+                <h1 className="text-xl md:text-3xl font-semibold">Order Summary</h1>
 
                 <div className="flex flex-col gap-2">
                   <div className="flex justify-between items-center">
@@ -115,6 +115,7 @@ const Cart = () => {
                   <Button btnValue={"CHECKOUT NOW"} />
                 </div>
               </div>
+
             </div>
           </>
         ) : (
