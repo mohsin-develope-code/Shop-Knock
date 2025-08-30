@@ -27,8 +27,8 @@ router.post("/payment", checkAuth, async (req, res) => {
         payment_method_types: ["card"],
         line_items: lineItems,
         mode: "payment",
-        success_url: "http://localhost:5173/success",
-        cancel_url: "http://localhost:5173/fail",  
+        success_url: "https://shop-knock-fashion.onrender.com/success",
+        cancel_url: "https://shop-knock-fashion.onrender.com/fail",  
     })
 
     res.json({id: session.id})
